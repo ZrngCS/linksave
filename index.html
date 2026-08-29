@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دابەزێنەری ڤیدیۆ | بەبێ لۆگۆ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         :root {
+            --tiktok-color: #ff0050;
+            --snap-color: #fffc00;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background: #0f172a;
+            /* باکگراوندی تاریک */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        /* ڕەنگەکانی پشتەوە بۆ جوانی */
+        
+        .shape {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            background: #ff0050;
+            top: -50px;
+            left: -50px;
+            opacity: 0.5;
+        }
+        
+        .shape2 {
+            width: 400px;
+            height: 400px;
+            background: #00f2fe;
+            bottom: -100px;
+            right: -50px;
+            opacity: 0.4;
+        }
+        
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .glass-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icons-header {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .icons-header .fa-tiktok {
+            color: #ff0050;
+            text-shadow: 2px 2px 0px #00f2fe;
+        }
+        
+        .icons-header .fa-snapchat {
+            color: var(--snap-color);
+            margin-right: 15px;
+        }
+        
+        h2 {
+            margin: 0 0 10px;
+            font-weight: 900;
+            font-size: 28px;
+        }
+        
+        p {
+            margin: 0 0 30px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+        
+        input[type="url"] {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            /* بۆشایی بۆ ئایکۆنەکە */
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+        
+        input[type="url"]:focus {
+            border-color: #00f2fe;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        input[type="url"]::placeholder {
+            color: #94a3b8;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff0050, #d40042);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.4);
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            box-shadow: 0 6px 20px rgba(255, 0, 80, 0.6);
+            transform: scale(1.02);
+        }
+        
+        .footer-text {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+
+    <div class="glass-container">
+        <div class="icons-header">
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-snapchat"></i>
+        </div>
+        <h2>دابەزێنەری ڤیدیۆ</h2>
+        <p>ڤیدیۆکانی تیکتۆک و سناپچات بەرزترین کوالێتی و بێ لۆگۆ دابەزێنە</p>
+
+        <form action="download.php" method="POST">
+            <div class="input-group">
+                <i class="fa-solid fa-link"></i>
+                <input type="url" name="video_url" placeholder="لێرە لینکی ڤیدیۆکە دابنێ..." required autocomplete="off">
+            </div>
+            <button type="submit">
+                <i class="fa-solid fa-cloud-arrow-down" style="margin-left: 8px;"></i> دابەزاندن
+            </button>
+        </form>
+        <div class="footer-text">پەرەپێدراوە بە شێوازێکی خێرا و پارێزراو</div>
+    </div>
+
+</body>
+
+</html>
